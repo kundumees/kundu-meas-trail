@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<h1>🔐 Kundu Mees</h1>
+
+<h2>Admin Dashboard</h2>
+
+<hr>
+
+<button onclick="location.href='attendance.html'">
+📅 Attendance
+</button>
+
+<br><br>
+
+<button onclick="location.href='income.html'">
+💰 Income
+</button>
+
+<br><br>
+
+<button onclick="location.href='regular.html'">
+🛒 Regular Expenses
+</button>
+
+<br><br>
+
+<button onclick="location.href='monthly.html'">
+🏠 Monthly Expenses
+</button>
+
+<br><br>
+
+<button onclick="location.href='charges.html'">
+⚠️ Charges
+</button>
+
+<br><br>
+
+<button onclick="location.href='reports.html'">
+📊 Reports
+</button>
+
+<br><br>
+
+<button id="logout">
+🚪 Logout
+</button>
+
+<script type="module">
+
+import { auth } from "./firebase.js";
+import { signOut } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-auth.js";
+
+document.getElementById("logout").onclick = async()=>{
+
+await signOut(auth);
+
+alert("Logged Out Successfully");
+
+window.location.href="index.html";
+
+};
+
+</script>
+
+</body>
+</html>
